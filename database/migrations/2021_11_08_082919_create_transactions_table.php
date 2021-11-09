@@ -30,6 +30,7 @@ class CreateTransactionsTable extends Migration
             $table->bigInteger('penalty');
             $table->date('start');
             $table->date('end');
+            $table->string('testimony');
             $table->timestamps();
         });
     }

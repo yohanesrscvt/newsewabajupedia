@@ -17,18 +17,18 @@
                 <h1>LOGIN</h1>
             </div>
             <!-- modified form -->
-            <form action="" method="post" class="form">
+            <form action="{{ route('do-login') }}" method="post" class="form">
                 @csrf
                 <div class="email">
                     <label for="email">Email</label>
                     <br>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" required value="{{ @old('email') }}">
                 </div>
 
                 <div class="password">
                     <label for="password">Password</label>
                     <br>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" required value="{{ @old('password') }}">
                 </div>
                 
                 <button id="submit-button" type="submit" >Login</button>

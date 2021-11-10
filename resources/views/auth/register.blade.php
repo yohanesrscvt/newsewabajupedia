@@ -18,12 +18,12 @@
             </div>
             
             <!-- modified form -->
-            <form action="" method="post" class="form"> 
+            <form action="{{ route('do-register') }}" method="post" class="form"> 
                 @csrf
                 <div class="name">
-                    <label for="nama">Nama Lengkap</label>
+                    <label for="name">Nama Lengkap</label>
                     <br>
-                    <input type="text" name="nama" id="nama" required>
+                    <input type="text" name="name" id="name" required>
                 </div>
 
                 <div class="email">
@@ -38,23 +38,22 @@
                     <input type="password" name="password" id="password" required>
                 </div>
 
-                <div class="conf-password">
-                    <label for="confirm_password">Konfirmasi Password</label>
-                    <br>
-                    <input type="password" name="confirm_password" id="confirm_password" required>
-                </div>
                 <button id="submit-button" type="submit" >Register</button>
             </form>
 
             <!-- alert message -->
-            @if(Session::get('fail'))
+            @if ($errors->any())
                 <script>
-                    swal("Sorry", "{{Session::get('fail')}}", "error");
+                    swal("Sorry", 
+                        @foreach ($errors->all() as $error)
+                            "{{ $error }}"
+                        @endforeach
+                    , "error");
                 </script>
             @endif
             <div class="already-register">
                 <p>Sudah memiliki akun?</p>
-                <a href="/login">Masuk Sekarang</a>
+                <a href="">Masuk Sekarang</a>
             </div>
         </div>    
     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Agent\AgentHomeController;
 use App\Http\Controllers\Authentication\LoginController;
 use App\Http\Controllers\Authentication\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,9 @@ Route::prefix('auth')->group(function () {
 
 Route::get('home', [LoginController::class,'showDashboard'])->name('show-home')->middleware(['auth','prevent-back']);
 Route::post('logout', [LoginController::class,'logout'])->name('do-logout');
+
+Route::prefix('agent')->group(function () {
+    Route::get('/', [AgentHomeController::class,'index'])->name('agent-home');
+    Route::get('add-clothes', [AgentHomeController::class,'create'])->name('show-add-clothes');
+    Route::post('add-clothes', [AgentHomeController::class,'store'])->name('do-add-clothes');
+});

@@ -46,8 +46,8 @@
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="/home" class="nav-link px-2 link-dark">Home</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark">Agent Page</a></li>
+                        <li><a href="{{ route('show-home') }}" class="nav-link px-2 link-dark">Home</a></li>
+                        <li><a href="{{ route('agent-home') }}" class="nav-link px-2 link-dark">Agent Page</a></li>
                     </ul>
 
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -56,7 +56,7 @@
 
                     <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle"> {{ auth()->user()->name }}
+                        {{ auth()->user()->name }}
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="#">My Balance: <b>{{ auth()->user()->balance }}</b></a></li>

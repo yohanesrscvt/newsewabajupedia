@@ -53,7 +53,7 @@
             @endif
             <div class="already-register">
                 <p>Sudah memiliki akun?</p>
-                <a href="">Masuk Sekarang</a>
+                <a href="{{ route('show-login') }}">Masuk Sekarang</a>
             </div>
         </div>    
     </div>

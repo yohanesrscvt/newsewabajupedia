@@ -47,7 +47,7 @@
             
             <div class="already-login">
                 <p>Belum memiliki akun?</p>
-                <a href="">Daftar Sekarang</a>
+                <a href="{{ route('show-register') }}">Daftar Sekarang</a>
             </div>
         </div>
     </div>

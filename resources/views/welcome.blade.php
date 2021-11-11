@@ -18,7 +18,7 @@
             <p class="par" style="font-size: 30px;">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam dicta impedit tempore. Iure vel omnis perferendis nihil dolor voluptate neque nulla exercitationem? Aliquid perspiciatis ullam consectetur nesciunt iste quos mollitia?
             </p>
-            <a class="btn btn-success btn-block" href="" style="font-size: 20px;">Coba Sekarang</a><br>
+            <a class="btn btn-success btn-block" href="{{ route('show-login') }}" style="font-size: 20px;">Coba Sekarang</a><br>
             Photo by <strong>Tembela Bohle</strong> from Pexels
         </div>
     </div>

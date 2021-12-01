@@ -18,18 +18,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::prefix('auth')->group(function () {
-    Route::get('register',[RegisterController::class,'create'])->name('show-register')->middleware('guest');
-    Route::post('register', [RegisterController::class,'store'])->name('do-register')->middleware('guest');
-    Route::get('login',[LoginController::class,'create'])->name('show-login')->middleware('guest');
-    Route::post('login', [LoginController::class,'store'])->name('do-login')->middleware('guest');
+Route::middleware(['guest'])->group(function () {
+    Route::prefix('auth')->group(function () {
+        Route::get('register',[RegisterController::class,'create'])->name('show-register');
+        Route::post('register', [RegisterController::class,'store'])->name('do-register');
+        Route::get('login',[LoginController::class,'create'])->name('show-login');
+        Route::post('login', [LoginController::class,'store'])->name('do-login');
+    });
 });
 
-Route::get('home', [LoginController::class,'showDashboard'])->name('show-home')->middleware(['auth','prevent-back']);
 Route::post('logout', [LoginController::class,'logout'])->name('do-logout');
 
-Route::prefix('agent')->group(function () {
-    Route::get('/', [AgentHomeController::class,'index'])->name('agent-home');
-    Route::get('add-clothes', [AgentHomeController::class,'create'])->name('show-add-clothes');
-    Route::post('add-clothes', [AgentHomeController::class,'store'])->name('do-add-clothes');
+Route::middleware(['auth','prevent-back'])->group(function () {
+    Route::get('home', [LoginController::class,'showDashboard'])->name('show-home');
+    Route::prefix('agent')->group(function () {
+        Route::get('/', [AgentHomeController::class,'index'])->name('agent-home');
+        Route::get('add-clothes', [AgentHomeController::class,'create'])->name('show-add-clothes');
+        Route::post('add-clothes', [AgentHomeController::class,'store'])->name('do-add-clothes');
+    });
 });

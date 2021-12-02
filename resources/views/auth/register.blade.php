@@ -23,19 +23,19 @@
                 <div class="name">
                     <label for="name">Nama Lengkap</label>
                     <br>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name" value="{{ @old('name') }}" required>
                 </div>
 
                 <div class="email">
                     <label for="email">Email</label>
                     <br>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" value="{{ @old('email') }}" required>
                 </div>
 
                 <div class="password">
                     <label for="password">Password</label>
                     <br>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" value="{{ @old('password') }}" required>
                 </div>
 
                 <button id="submit-button" type="submit" >Register</button>

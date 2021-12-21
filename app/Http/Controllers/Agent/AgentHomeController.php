@@ -97,6 +97,6 @@ class AgentHomeController extends Controller
      */
     public function destroy($id)
     {
-        //dsf
+        //
     }
 }

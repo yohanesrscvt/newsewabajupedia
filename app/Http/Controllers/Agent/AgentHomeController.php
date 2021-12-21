@@ -64,17 +64,6 @@ class AgentHomeController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -83,9 +72,9 @@ class AgentHomeController extends Controller
     public function edit($id)
     {
         //
-        $clothes = Clothes::where('id',$id)->first();
-        $category = Category::all();
-        return view('agent.edit-clothes',['clothes'=>$clothes,'category'=>$category]);
+        $param['clothes'] = Clothes::where('id',$id)->first();
+        $param['category'] = Category::all();
+        return view('agent.edit-clothes')->with($param);
     }
 
     /**

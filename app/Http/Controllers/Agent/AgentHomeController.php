@@ -98,5 +98,6 @@ class AgentHomeController extends Controller
     public function destroy($id)
     {
         // coba branch git
+        // coba branch git 2
     }
 }

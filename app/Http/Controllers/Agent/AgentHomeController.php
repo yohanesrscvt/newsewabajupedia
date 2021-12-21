@@ -97,6 +97,6 @@ class AgentHomeController extends Controller
      */
     public function destroy($id)
     {
-        // ini branch master (pake ini aja ceritanya)
+        // ini branch bagian_yoh_lagi
     }
 }
